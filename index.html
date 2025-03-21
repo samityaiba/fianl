@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bathroom Game</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('tiles_background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+        .navbar {
+            background: rgba(100, 149, 237, 0.9);
+            padding: 15px 50px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar-logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .navbar-menu a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        .navbar-menu a:hover {
+            color: #ffcc00;
+        }
+        .container {
+            width: 80%;
+            margin: 60px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .game-image {
+            width: 100%;
+            max-width: 1200px;
+            height: auto;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        .change-image-btn {
+            background: #ffcc00;
+            color: black;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 16px;
+            transition: background 0.3s;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .change-image-btn:hover {
+            background: #ffaa00;
+        }
+        .download-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            background: #ffcc00;
+            color: black;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        .download-btn:hover {
+            background: #ffaa00;
+        }
+        .download-btn::after {
+            content: "💦";
+            position: absolute;
+            right: -25px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .video-container {
+    width: 80%;
+    margin: 40px auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+video {
+    width: 100%;
+    max-width: 800px;  /* ปรับขนาดให้เหมาะสม */
+    height: auto;
+    border-radius: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-logo">Super Toilet Runner</div>
+        <div class="navbar-menu">
+            <a href="index.html">Home</a>
+            <a href="features.html">Features</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="container">
+        <!-- Image Display -->
+        <img id="gameImage" class="game-image" src="Logo.png" alt="Game Image">
+        
+        <!-- Change Image Button -->
+        <button class="change-image-btn" onclick="changeImage()">Next</button>
+        
+        <!-- Download Button -->
+        <a href="https://dolcheb.itch.io/?fbclid=IwY2xjawJJ-KxleHRuA2FlbQIxMAABHY2TN67VbzdM5GEJUqDnP6zVZlRRy5fOwpslJevC7ULg8ab6XM9whx5qVA_aem_4fUMhHRixbzJEMxUHbIaDw" class="download-btn" download>Download Game</a>
+    </div>
+
+    <!-- Video Section -->
+    <!-- Video Section -->
+<!-- Video Section -->
+<div class="video-container">
+    <h2>Watch Our Gameplay</h2>
+    <!-- Link to open video -->
+    <a href="https://www.youtube.com/watch?v=pEU0xrgxS8M" target="_blank">
+        <!-- Video Thumbnail (Cover Image) -->
+        <img src="thumbnail-image.jpg" alt="Gameplay Thumbnail" style="width: 100%; max-width: 800px; border-radius: 10px;">
+    </a>
+</div>
+
+
+
+    <script>
+        let currentImageIndex = 0;
+        const images = ["Logo.png", "dev4.png", "dev5.png"]; // รูปภาพที่จะแสดง
+
+        function changeImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            const gameImage = document.getElementById("gameImage");
+            gameImage.src = images[currentImageIndex];
+        }
+    </script>
+</body>
+</html>
